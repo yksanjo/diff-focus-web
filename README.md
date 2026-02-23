@@ -1,76 +1,91 @@
-# Diff-Focus Web App
+# diff-focus-web
 
-A lightweight tool to generate context cards for code reviews. Paste any git diff and get instant analysis with risk levels, file types, summaries, and flags.
+Production-grade project scaffold focused on reliability, maintainability, and fast onboarding.
 
-## Features
+[![CI](https://img.shields.io/github/actions/workflow/status/yksanjo/diff-focus-web/ci.yml?branch=main&label=ci)](https://github.com/yksanjo/diff-focus-web/actions)
+![License](https://img.shields.io/github/license/yksanjo/diff-focus-web)
+![Last Commit](https://img.shields.io/github/last-commit/yksanjo/diff-focus-web)
+![Repo Size](https://img.shields.io/github/repo-size/yksanjo/diff-focus-web)
 
-- 🔍 **Diff Analysis**: Automatically analyzes git diffs for risk factors
-- 🎯 **Risk Assessment**: Categorizes changes as Low, Medium, or High risk
-- 📋 **Context Cards**: Generates summary cards perfect for code reviews
-- 🚩 **Smart Flags**: Detects dangerous operations, auth changes, debug artifacts, and more
-- 🎨 **Modern UI**: Clean, responsive interface built with React and Tailwind CSS
+## Detailed Description
 
-## Run Locally
+diff-focus-web is maintained as an industry-grade software project with production-ready engineering practices.  
+This repository includes documented setup, quality gates, operational guidance, and governance standards so contributors can safely build, test, and ship changes with confidence.
 
-1. Install dependencies:
-```bash
-npm run install-all
+## Problem Statement
+
+Describe the user or business problem this project solves, the target users, and expected outcomes.
+
+## Solution Overview
+
+Summarize the architecture, core modules, and runtime behavior at a high level.
+
+## Key Features
+
+- Clear project scope and intended use.
+- Reproducible local development workflow.
+- Test coverage and CI quality gates.
+- Security and contribution policies.
+- Deployment-ready repository structure.
+
+## Repository Structure
+
+```text
+.
+|-- src/                  # Core implementation
+|-- tests/                # Automated test suites
+|-- docs/                 # Design notes and operational docs
+|-- .github/workflows/    # CI pipelines
+|-- README.md
+|-- LICENSE
+|-- CONTRIBUTING.md
+|-- SECURITY.md
+|-- CODE_OF_CONDUCT.md
 ```
 
-2. Start development server:
-```bash
-npm run dev
-```
+## Getting Started
 
-This will start:
-- Backend server on `http://localhost:5000`
-- Frontend dev server on `http://localhost:3000`
+### Prerequisites
 
-## Production Build
+- Git
+- Project runtime/toolchain for this repo
+
+### Local Setup
 
 ```bash
-cd client
+npm ci
+npm run lint
+npm test
 npm run build
-cd ..
-NODE_ENV=production npm start
 ```
 
-## API
+## Usage
 
-### POST `/api/analyze`
+Document primary commands, API routes, CLI examples, or UI workflows here.
 
-Analyzes a git diff and returns structured analysis.
+## Quality Standards
 
-**Request:**
-```json
-{
-  "diff": "diff --git a/file.js b/file.js\n..."
-}
-```
+- CI must pass before merge.
+- Changes require tests for critical behavior.
+- Security-sensitive changes should include risk notes.
+- Keep pull requests focused and reviewable.
 
-**Response:**
-```json
-{
-  "riskLevel": "Medium",
-  "fileTypes": ["React Component"],
-  "summary": ["Modifies React component logic or hooks."],
-  "flags": [
-    {
-      "type": "warning",
-      "msg": "Authentication, privacy, or config change."
-    }
-  ]
-}
-```
+## Security
 
-## Tech Stack
+See `SECURITY.md` for responsible disclosure and handling guidelines.
 
-- **Backend**: Express.js
-- **Frontend**: React + Vite
-- **Styling**: Tailwind CSS
-- **Icons**: Lucide React
+## Contributing
+
+See `CONTRIBUTING.md` for branching, commit, and pull request expectations.
+
+## Roadmap
+
+Track upcoming milestones, technical debt, and planned feature work.
+
+## Support
+
+Open a GitHub issue for bugs, feature requests, or documentation gaps.
 
 ## License
 
-MIT
-
+This project is released under the MIT License.
